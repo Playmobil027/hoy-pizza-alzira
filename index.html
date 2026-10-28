@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoy Pizza · Pizza para llevar en Alzira</title>
+<meta name="description" content="Hoy Pizza, pizzería en Carrer Santa Teresa 13, Alzira. Mira la carta, pide por teléfono o WhatsApp y pasa a recogerla. 4,4 en Google con 140 reseñas.">
+<meta name="theme-color" content="#1d3f94">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M4 14h92a46 46 0 0 1-92 0z' fill='%231d3f94'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1d3f94;
+  --ink:#101e4a;
+  --paper:#f3efe6;
+  --paper-2:#e9e3d4;
+  --queso:#f2b83a;
+  --line:rgba(16,30,74,.18);
+  --serif:'Bodoni Moda','Didot','Times New Roman',serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --gut:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;padding-bottom:76px;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;margin:0;letter-spacing:-.01em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--queso);outline-offset:3px}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 var(--gut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 24px;border-radius:999px;font:600 16px/1 var(--sans);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-queso{background:var(--queso);color:var(--ink)}
+.btn-queso:hover{background:#ffc654}
+.btn-line{border-color:var(--paper);color:var(--paper)}
+.btn-line:hover{background:rgba(243,239,230,.12)}
+.btn-navy{background:var(--navy);color:var(--paper)}
+.btn-navy:hover{background:#264ba8}
+.btn-wa{background:#128c4a;color:#fff}
+.btn-wa:hover{background:#0f7a40}
+
+/* edit markers */
+.edit{transition:background .2s}
+body.ver-editables .edit{background:rgba(242,184,58,.55);outline:2px dashed #b7791f;outline-offset:2px;border-radius:3px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:30;background:var(--navy);color:var(--paper);border-bottom:1px solid rgba(243,239,230,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--paper)}
+.logo svg{width:44px;height:auto}
+.logo b{font:500 22px/1 var(--serif);letter-spacing:.06em}
+nav.main{display:none}
+nav.main a{text-decoration:none;font-weight:500;font-size:15px;padding:10px 4px;opacity:.9}
+nav.main a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
+header.top .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{background:var(--navy);color:var(--paper);position:relative;overflow:hidden;padding:36px 0 0}
+.hero .wrap{display:grid;gap:28px}
+.estado{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;background:rgba(243,239,230,.12);border:1px solid rgba(243,239,230,.3);padding:8px 14px;border-radius:999px;width:fit-content}
+.estado i{width:10px;height:10px;border-radius:50%;background:#9aa6c9;flex:none}
+.estado.open i{background:#5be08a;box-shadow:0 0 0 4px rgba(91,224,138,.25)}
+.hero h1{font-size:clamp(46px,13vw,92px);font-weight:400;line-height:.98;margin-top:18px}
+.hero h1 em{font-style:italic}
+.hero p.lead{font-size:18px;max-width:34ch;margin-top:18px;color:#e4e8f6}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.arch{position:relative;width:100%;aspect-ratio:1/.66;border-radius:0 0 50% 50%/0 0 100% 100%;overflow:hidden;background:#0f2a6b;margin-top:4px}
+.arch img{width:100%;height:100%;object-fit:cover}
+.arch svg{position:absolute;inset:0;width:100%;height:100%}
+.arch svg line{stroke:var(--paper);stroke-width:2;vector-effect:non-scaling-stroke;opacity:.85}
+.hero .foot{padding-bottom:0}
+
+/* trust */
+.trust{background:var(--paper);border-bottom:1px solid var(--line)}
+.trust ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr}
+.trust li{padding:20px var(--gut);border-bottom:1px solid var(--line)}
+.trust li:nth-child(odd){border-right:1px solid var(--line)}
+.trust li:nth-last-child(-n+2){border-bottom:0}
+.trust .big{font:500 38px/1 var(--serif);color:var(--navy)}
+.trust .big small{font:500 16px var(--sans);color:var(--ink)}
+.trust span.sm{display:block;font-size:14px;margin-top:6px;opacity:.85}
+.stars{color:#b5780a;letter-spacing:2px}
+
+/* sections */
+section{padding:64px 0}
+.sec-head{max-width:640px;margin-bottom:34px}
+.sec-head h2{font-size:clamp(34px,8vw,56px)}
+.sec-head p{margin-top:12px;font-size:18px}
+
+/* carta destacada */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{display:flex;flex-direction:column;background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.card .b{padding:14px 14px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card h3{font-size:22px}
+.card p{font-size:14px;line-height:1.4;opacity:.85}
+.card .pr{font:600 18px var(--sans);color:var(--navy);margin-top:auto;padding-top:8px}
+.card a.ped{margin-top:10px;min-height:44px;font-size:14px;padding:0 14px}
+
+/* carta completa */
+.tiers{margin-top:46px;display:grid;gap:0;border-top:2px solid var(--ink)}
+.tier{display:grid;gap:6px;padding:26px 0;border-bottom:1px solid var(--line)}
+.tier .price{font:500 clamp(44px,11vw,64px)/1 var(--serif);color:var(--navy)}
+.tier .price small{font:500 15px var(--sans);color:var(--ink);margin-left:6px}
+.tier ul{list-style:none;margin:0;padding:0}
+.tier li a{display:flex;flex-direction:column;padding:11px 0;min-height:48px;text-decoration:none;border-bottom:1px dotted var(--line)}
+.tier li:last-child a{border-bottom:0}
+.tier li a b{font-weight:600;font-size:17px}
+.tier li a span{font-size:14px;opacity:.8}
+.tier li a:hover b{color:var(--navy);text-decoration:underline;text-underline-offset:4px}
+.nota{margin-top:20px;font-size:15px;opacity:.85}
+
+/* como pedir */
+.como{background:var(--navy);color:var(--paper);position:relative;overflow:hidden}
+.como .sec-head p{color:#dfe5f6}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:6px 16px;padding:22px 0;border-top:1px solid rgba(243,239,230,.3);counter-increment:s}
+.steps li::before{content:counter(s);font:400 48px/1 var(--serif);color:var(--queso)}
+.steps h3{font-size:26px}
+.steps p{grid-column:2;color:#dfe5f6;font-size:16px}
+.como .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* reseñas */
+.rev-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.rev-top .n{font:500 76px/1 var(--serif);color:var(--navy)}
+.revs{display:grid;gap:14px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+.rev p{font:400 21px/1.35 var(--serif);margin-top:10px}
+.rev small{display:block;margin-top:14px;font-size:14px;opacity:.75}
+
+/* galeria */
+.gal{background:var(--paper-2)}
+.gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.gal-grid a{display:block;position:relative;overflow:hidden;aspect-ratio:1/1;background:#cfc8b6}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gal-grid a:hover img{transform:scale(1.04)}
+.gal .cta{margin-top:26px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.gal .cta span{font-size:15px}
+
+/* visita */
+.visita{background:var(--ink);color:var(--paper)}
+.visita .grid{display:grid;gap:34px}
+.visita h2{font-size:clamp(34px,8vw,56px)}
+.visita dl{margin:22px 0 0;display:grid;gap:18px}
+.visita dt{font-weight:600;font-size:14px;opacity:.7;margin-bottom:2px}
+.visita dd{margin:0;font-size:19px}
+.visita dd a{text-decoration:none;border-bottom:1px solid rgba(243,239,230,.5)}
+table.hor{width:100%;border-collapse:collapse;font-size:17px}
+table.hor td{padding:9px 10px;border-bottom:1px solid rgba(243,239,230,.2)}
+table.hor td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+table.hor tr.hoy{background:var(--queso);color:var(--ink);font-weight:700}
+table.hor tr.hoy td{border-color:transparent}
+.map{border-radius:18px;overflow:hidden;border:1px solid rgba(243,239,230,.25);min-height:300px}
+.map iframe{width:100%;height:100%;min-height:320px;border:0;display:block;filter:saturate(.85)}
+.visita .btn-wa{width:100%;min-height:58px;font-size:18px;margin-top:26px}
+
+/* footer */
+footer{background:var(--navy);color:var(--paper);padding:44px 0 36px}
+footer .wrap{display:grid;gap:22px}
+footer .logo svg{width:60px}
+footer .logo b{font-size:28px}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px}
+footer a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+footer a:hover{text-decoration:underline;text-underline-offset:4px}
+footer small{opacity:.8;font-size:14px}
+
+/* barra movil */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1.5fr;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(16,30,74,.12)}
+.bar .btn{min-height:52px}
+
+/* franja dueño */
+.dueno{background:repeating-linear-gradient(135deg,#fff7d6 0 14px,#fff0b8 14px 28px);color:#2a2100;border-top:6px solid #b7791f;padding:44px 0 56px}
+.dueno .tag{display:inline-block;background:#2a2100;color:#fff7d6;font-weight:700;font-size:14px;padding:6px 12px;border-radius:6px}
+.dueno h2{font-size:clamp(28px,6vw,42px);margin:14px 0 22px}
+.dueno ul{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:12px}
+.dueno li{background:rgba(255,255,255,.7);border:1px solid #d9b95a;border-radius:12px;padding:16px 18px;font-size:16px}
+.dueno li b{display:block;font-size:17px;margin-bottom:2px}
+.dueno button{font:600 16px var(--sans);min-height:48px;padding:0 22px;border-radius:999px;border:2px solid #2a2100;background:#2a2100;color:#fff7d6;cursor:pointer}
+.dueno button[aria-pressed=true]{background:#fff7d6;color:#2a2100}
+
+@media (min-width:720px){
+  :root{--gut:32px}
+  body{padding-bottom:0}
+  .bar{display:none}
+  nav.main{display:flex;gap:22px}
+  .hero{padding-top:56px}
+  .hero .wrap{grid-template-columns:1.05fr 1fr;align-items:end;gap:48px}
+  .arch{aspect-ratio:1/.8;margin-top:0}
+  .trust ul{grid-template-columns:repeat(4,1fr)}
+  .trust li{border-bottom:0!important;border-right:1px solid var(--line)}
+  .trust li:last-child{border-right:0}
+  section{padding:96px 0}
+  .feat{grid-template-columns:repeat(4,1fr);gap:18px}
+  .tiers{grid-template-columns:1fr 1fr;column-gap:56px}
+  .tier.t1{grid-column:1/-1}
+  .tier.t1 ul{max-width:420px}
+  .tier{grid-template-columns:1fr;align-content:start}
+  .steps{grid-template-columns:repeat(3,1fr);gap:36px}
+  .steps li{grid-template-columns:1fr;padding:26px 0 0}
+  .steps p{grid-column:1}
+  .revs{grid-template-columns:repeat(3,1fr)}
+  .gal-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .visita .grid{grid-template-columns:1fr 1.1fr;gap:56px}
+  .visita .btn-wa{width:auto;padding:0 36px}
+  .dueno ul{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1000px){
+  .hero h1{font-size:96px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="fan" viewBox="0 0 100 52">
+      <path d="M2 2h96a48 48 0 0 1-96 0z" fill="#1d3f94"/>
+      <g stroke="#f3efe6" stroke-width="1.6" fill="none">
+        <path d="M50 2L50 50"/>
+        <path d="M50 2L8.4 26"/>
+        <path d="M50 2L91.6 26"/>
+      </g>
+    </symbol>
+    <symbol id="fan-light" viewBox="0 0 100 52">
+      <path d="M2 2h96a48 48 0 0 1-96 0z" fill="#f3efe6"/>
+      <g stroke="#1d3f94" stroke-width="1.6" fill="none">
+        <path d="M50 2L50 50"/>
+        <path d="M50 2L8.4 26"/>
+        <path d="M50 2L91.6 26"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Hoy Pizza, inicio">
+      <svg viewBox="0 0 100 52" aria-hidden="true"><use href="#fan-light"/></svg>
+      <b>HOY PIZZA</b>
+    </a>
+    <nav class="main" aria-label="Principal">
+      <a href="#carta">Carta</a>
+      <a href="#como">Cómo pedir</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#visita">Horario y dirección</a>
+    </nav>
+    <a class="btn btn-queso" href="#carta">Pedir ahora</a>
+  </div>
+</header>
+
+<main id="inicio">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="estado" id="estado" role="status"><i></i><span>Comprobando horario…</span></p>
+      <h1>Pizza para llevar en Alzira</h1>
+      <p class="lead">Elige en la carta, llámanos o escríbenos por WhatsApp y pasa a recogerla por Carrer Santa Teresa.</p>
+      <div class="cta">
+        <a class="btn btn-queso" href="https://wa.me/34962401290?text=Hola%2C%20quiero%20hacer%20un%20pedido%20para%20recoger." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <a class="btn btn-line" href="#carta">Ver la carta</a>
+      </div>
+    </div>
+    <div class="arch">
+      <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=1000&h=720&fit=crop" alt="Pizza de pepperoni recién cortada" fetchpriority="high">
+      <svg viewBox="0 0 100 66" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="50" y1="0" x2="50" y2="66"/>
+        <line x1="50" y1="0" x2="8" y2="46"/>
+        <line x1="50" y1="0" x2="92" y2="46"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap" style="padding:0">
+    <ul>
+      <li><span class="big">4,4 <small class="stars" aria-hidden="true">★★★★★</small></span><span class="sm">Valoración en Google</span></li>
+      <li><span class="big">140</span><span class="sm">Reseñas de Google</span></li>
+      <li><span class="big">6,90 <small>€</small></span><span class="sm">Pizza Margarita <span class="edit">(desde)</span></span></li>
+      <li><span class="big" style="font-size:30px;padding-top:6px;display:block">Mar a dom</span><span class="sm"><span class="edit">Desde las 19:00</span></span></li>
+    </ul>
+  </div>
+</div>
+
+<section id="carta">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>La carta</h2>
+      <p>Todas las pizzas llevan orégano y aceitunas negras. Toca una y se abre WhatsApp con el pedido escrito.</p>
+    </div>
+
+    <div class="feat">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1627626775846-122b778965ae?w=500&h=500&fit=crop" alt="Pizza de tomate y queso con albahaca" loading="lazy">
+        <div class="b"><h3>Margarita</h3><p>Tomate y queso.</p><span class="pr edit">6,90 €</span>
+        <a class="btn btn-navy ped" href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Margarita%20para%20recoger." target="_blank" rel="noopener">Pedir</a></div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1613564834361-9436948817d1?w=500&h=500&fit=crop" alt="Pizza con champiñón sobre tabla de madera" loading="lazy">
+        <div class="b"><h3>Funghi</h3><p>Tomate, queso y champiñón.</p><span class="pr edit">7,50 €</span>
+        <a class="btn btn-navy ped" href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Funghi%20para%20recoger." target="_blank" rel="noopener">Pedir</a></div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=500&h=500&fit=crop" alt="Pizza con chorizo y aceitunas" loading="lazy">
+        <div class="b"><h3>Pepperoni</h3><p>Tomate, queso, chorizo y champiñón.</p><span class="pr edit">8,60 €</span>
+        <a class="btn btn-navy ped" href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Pepperoni%20para%20recoger." target="_blank" rel="noopener">Pedir</a></div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1593504049359-74330189a345?w=500&h=500&fit=crop" alt="Pizza de queso con hebras de queso fundido" loading="lazy">
+        <div class="b"><h3>Cuatro quesos</h3><p>Tomate, mozzarella, emmental, roquefort y parmesano.</p><span class="pr edit">9,70 €</span>
+        <a class="btn btn-navy ped" href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Cuatro%20quesos%20para%20recoger." target="_blank" rel="noopener">Pedir</a></div>
+      </article>
+    </div>
+
+    <div class="tiers">
+      <div class="tier t1">
+        <div class="price edit">6,90 €</div>
+        <ul>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Margarita%20para%20recoger." target="_blank" rel="noopener"><b>Margarita</b><span>Tomate, queso</span></a></li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="price edit">7,50 €</div>
+        <ul>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Funghi%20para%20recoger." target="_blank" rel="noopener"><b>Funghi</b><span>Tomate, queso, champiñón</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Cebolla%20para%20recoger." target="_blank" rel="noopener"><b>Cebolla</b><span>Tomate, queso, cebolla</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Prosciutto%20para%20recoger." target="_blank" rel="noopener"><b>Prosciutto</b><span>Tomate, queso, jamón york</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Bacon%20para%20recoger." target="_blank" rel="noopener"><b>Bacon</b><span>Tomate, queso, bacon</span></a></li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="price edit">8,60 €</div>
+        <ul>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Romana%20para%20recoger." target="_blank" rel="noopener"><b>Romana</b><span>Tomate, queso, york, champiñón</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Pepperoni%20para%20recoger." target="_blank" rel="noopener"><b>Pepperoni</b><span>Tomate, queso, chorizo, champiñón</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Verona%20para%20recoger." target="_blank" rel="noopener"><b>Verona</b><span>Tomate, queso, atún, cebolla</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Oasis%20para%20recoger." target="_blank" rel="noopener"><b>Oasis</b><span>Tomate, queso, bacon, dátiles</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Samoa%20para%20recoger." target="_blank" rel="noopener"><b>Samoa</b><span>Nata, queso, bacon</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Provenzana%20para%20recoger." target="_blank" rel="noopener"><b>Provenzana</b><span>Tomate, queso, bacon, cebolla</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Tropical%20para%20recoger." target="_blank" rel="noopener"><b>Tropical</b><span>Tomate, queso, york, piña</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Frankfurt%20para%20recoger." target="_blank" rel="noopener"><b>Frankfurt</b><span>Tomate, queso, bacon, frankfurt</span></a></li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="price edit">9,70 €</div>
+        <ul>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Vegetal%20para%20recoger." target="_blank" rel="noopener"><b>Vegetal</b><span>Tomate, queso, champiñón, alcachofa, espárrago</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Carbonara%20para%20recoger." target="_blank" rel="noopener"><b>Carbonara</b><span>Nata, queso, bacon, cebolla, champiñón</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Cuatro%20estaciones%20para%20recoger." target="_blank" rel="noopener"><b>Cuatro estaciones</b><span>Tomate, queso, york, champiñón, alcachofa, pimiento</span></a></li>
+          <li><a href="https://wa.me/34962401290?text=Hola%2C%20quiero%20una%20pizza%20Cuatro%20quesos%20para%20recoger." target="_blank" rel="noopener"><b>Cuatro quesos</b><span>Tomate, mozzarella, emmental, roquefort, parmesano</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="nota">Precios del tamaño pequeño <span class="edit">(27 cm)</span>. <span class="edit">También hay tamaño grande: pregúntanos el precio al pedir.</span></p>
+  </div>
+</section>
+
+<section class="como" id="como">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Pedir es cosa de un minuto</h2>
+      <p>Sin aplicaciones ni comisiones: hablas directamente con la pizzería.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Elige tu pizza</h3><p>Mira la carta y decide tamaño y sabores.</p></li>
+      <li><h3>Llama o escribe</h3><p>Al 962 40 12 90 o por WhatsApp, con el pedido ya escrito.</p></li>
+      <li><h3>Pasa a recogerla</h3><p>La tienes lista en Carrer Santa Teresa 13, Alzira.</p></li>
+    </ol>
+    <div class="cta">
+      <a class="btn btn-queso" href="https://wa.me/34962401290?text=Hola%2C%20quiero%20hacer%20un%20pedido%20para%20recoger." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      <a class="btn btn-line" href="tel:+34962401290">Llamar al 962 40 12 90</a>
+    </div>
+  </div>
+</section>
+
+<section id="opiniones">
+  <div class="wrap">
+    <div class="rev-top">
+      <span class="n">4,4</span>
+      <div><div class="stars" aria-label="4,4 sobre 5" style="font-size:22px">★★★★★</div><div>140 reseñas en Google</div></div>
+    </div>
+    <div class="revs">
+      <figure class="rev" style="margin:0"><div class="stars" aria-label="4 estrellas">★★★★☆</div><p>“Buena masa, pizzas hechas al horno, puntuales.”</p><small>Reseñas de Google</small></figure>
+      <figure class="rev" style="margin:0"><div class="stars" aria-label="4 estrellas">★★★★☆</div><p>“Precios económicos y buen trato, pero para mi gusto las pizzas muy normales.”</p><small>Reseñas de Google</small></figure>
+      <figure class="rev" style="margin:0"><div class="stars" aria-label="4 estrellas">★★★★☆</div><p>“Fines de semana, mucha gente para recoger, pero sirven razonablemente rápido.”</p><small>Reseñas de Google</small></figure>
+    </div>
+  </div>
+</section>
+
+<section class="gal" id="galeria">
+  <div class="wrap">
+    <div class="sec-head"><h2>Del horno al cartón</h2><p>Pizzas, quesos y mucho borde crujiente. Fotos provisionales.</p></div>
+    <div class="gal-grid">
+      <a href="https://www.instagram.com/hoy_pizza_/" target="_blank" rel="noopener" aria-label="Ver Instagram de Hoy Pizza"><img loading="lazy" src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600&h=600&fit=crop" alt="Pizza con salchicha, champiñón y aceitunas"></a>
+      <a href="https://www.instagram.com/hoy_pizza_/" target="_blank" rel="noopener" aria-label="Ver Instagram de Hoy Pizza"><img loading="lazy" src="https://images.unsplash.com/photo-1593504049359-74330189a345?w=600&h=600&fit=crop" alt="Queso fundido de una porción de pizza"></a>
+      <a href="https://www.instagram.com/hoy_pizza_/" target="_blank" rel="noopener" aria-label="Ver Instagram de Hoy Pizza"><img loading="lazy" src="https://images.unsplash.com/photo-1630466913899-31fb06c6110e?w=600&h=600&fit=crop" alt="Pizza en caja de cartón"></a>
+      <a href="https://www.instagram.com/hoy_pizza_/" target="_blank" rel="noopener" aria-label="Ver Instagram de Hoy Pizza"><img loading="lazy" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop" alt="Pizza cortada en porciones con tomates cherry"></a>
+      <a href="https://www.instagram.com/hoy_pizza_/" target="_blank" rel="noopener" aria-label="Ver Instagram de Hoy Pizza"><img loading="lazy" src="https://images.unsplash.com/photo-1651978595416-9956a5fb8f7a?w=600&h=600&fit=crop" alt="Mano levantando una porción de pizza con queso"></a>
+      <a href="https://www.instagram.com/hoy_pizza_/" target="_blank" rel="noopener" aria-label="Ver Instagram de Hoy Pizza"><img loading="lazy" src="https://images.unsplash.com/photo-1611915365928-565c527a0590?w=600&h=600&fit=crop" alt="Porciones de pizza de pepperoni sobre fondo naranja"></a>
+    </div>
+    <div class="cta">
+      <a class="btn btn-navy" href="https://www.instagram.com/hoy_pizza_/" target="_blank" rel="noopener">Síguenos en Instagram</a>
+      <span>@hoy_pizza_</span>
+    </div>
+  </div>
+</section>
+
+<section class="visita" id="visita">
+  <div class="wrap grid">
+    <div>
+      <h2>Ven a recogerla</h2>
+      <dl>
+        <div><dt>Dirección</dt><dd>Carrer Santa Teresa, 13<br>46600 Alzira, Valencia</dd></div>
+        <div><dt>Teléfono</dt><dd><a href="tel:+34962401290">962 40 12 90</a></dd></div>
+        <div><dt>Horario <span class="edit" style="font-weight:400">(confirmar)</span></dt>
+          <dd>
+            <table class="hor" aria-label="Horario">
+              <tr data-d="1"><td>Lunes</td><td>Cerrado</td></tr>
+              <tr data-d="2"><td>Martes</td><td class="edit">19:00 – 22:30</td></tr>
+              <tr data-d="3"><td>Miércoles</td><td class="edit">19:00 – 22:30</td></tr>
+              <tr data-d="4"><td>Jueves</td><td class="edit">19:00 – 22:30</td></tr>
+              <tr data-d="5"><td>Viernes</td><td class="edit">19:00 – 23:30</td></tr>
+              <tr data-d="6"><td>Sábado</td><td class="edit">19:00 – 23:30</td></tr>
+              <tr data-d="0"><td>Domingo</td><td class="edit">19:00 – 23:00</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+      <a class="btn btn-wa" href="https://wa.me/34962401290?text=Hola%2C%20quiero%20hacer%20un%20pedido%20para%20recoger." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    </div>
+    <div class="map">
+      <iframe title="Mapa de Hoy Pizza en Alzira" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Hoy+Pizza,+Carrer+Santa+Teresa+13,+Alzira&amp;output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Hoy Pizza"><svg viewBox="0 0 100 52" aria-hidden="true"><use href="#fan-light"/></svg><b>HOY PIZZA</b></a>
+    <small>Porciones y para llevar<span class="edit"> · También en Sueca</span></small>
+    <ul>
+      <li><a href="https://www.instagram.com/hoy_pizza_/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a class="edit" href="https://www.facebook.com/p/Hoy-pizza-100063661565903/" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="#" class="edit">Aviso legal</a></li>
+      <li><a href="#" class="edit">Privacidad</a></li>
+      <li><a href="#" class="edit">Cookies</a></li>
+    </ul>
+    <small>© Hoy Pizza, Alzira. Carrer Santa Teresa 13.</small>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-navy" href="tel:+34962401290">Llamar</a>
+  <a class="btn btn-wa" href="https://wa.me/34962401290?text=Hola%2C%20quiero%20hacer%20un%20pedido%20para%20recoger." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+</div>
+
+<aside class="dueno" aria-label="Franja para el dueño">
+  <div class="wrap">
+    <span class="tag">Esta franja no aparece en la web publicada</span>
+    <h2>Lo que os aporta una web propia</h2>
+    <ul>
+      <li><b>Pedidos directos, sin comisiones</b>Quien os busca para recoger pide por llamada o WhatsApp desde el móvil, sin pasar por plataformas que se quedan con parte del pedido.</li>
+      <li><b>Salir cuando buscan “pizzería en Alzira”</b>Una web con vuestra dirección, carta y horario ayuda a aparecer mejor en Google y en Maps.</li>
+      <li><b>Carta y horario fáciles de cambiar</b>Si sube un precio, hay un cierre por descanso o entra una pizza nueva, se actualiza en un momento y se ve igual en el móvil que en Instagram.</li>
+      <li><b>Vuestro 4,4 de Google, bien presentado</b>140 reseñas que hoy se quedan escondidas en Maps, junto a la carta y el botón de pedir.</li>
+    </ul>
+    <button type="button" id="resaltar" aria-pressed="false">Resaltar datos a confirmar</button>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var H={0:[19,0,23,0],2:[19,0,22,30],3:[19,0,22,30],4:[19,0,22,30],5:[19,0,23,30],6:[19,0,23,30]};
+  var N=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  function pad(n){return (n<10?'0':'')+n}
+  function now(){
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var o={};p.forEach(function(x){o[x.type]=x.value});
+    var w={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday];
+    return {d:w,m:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
+  }
+  function render(){
+    var t=now(),el=document.getElementById('estado'),txt,open=false,h=H[t.d];
+    if(h){
+      var a=h[0]*60+h[1],c=h[2]*60+h[3];
+      if(t.m>=a&&t.m<c){open=true;txt='Abierto ahora · hasta las '+h[2]+':'+pad(h[3]);}
+      else if(t.m<a){txt='Cerrado · abrimos hoy a las '+h[0]+':'+pad(h[1]);}
+    }
+    if(!txt){
+      for(var i=1;i<=7;i++){var d=(t.d+i)%7;if(H[d]){txt='Cerrado · abrimos '+(i===1?'mañana':'el '+N[d])+' a las '+H[d][0]+':'+pad(H[d][1]);break;}}
+    }
+    el.className='estado'+(open?' open':'');
+    el.querySelector('span').textContent=txt;
+    document.querySelectorAll('table.hor tr').forEach(function(r){r.classList.toggle('hoy',parseInt(r.dataset.d,10)===t.d)});
+  }
+  render();setInterval(render,60000);
+  var b=document.getElementById('resaltar');
+  b.addEventListener('click',function(){
+    var on=document.body.classList.toggle('ver-editables');
+    b.setAttribute('aria-pressed',on);
+    b.textContent=on?'Quitar resaltado':'Resaltar datos a confirmar';
+  });
+})();
+</script>
+</body>
+</html>
